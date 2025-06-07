@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triaton Aquatics - Premium Aquariums & Supplies</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --deep-blue: #003366;
+            --ocean-blue: #005c99;
+            --light-blue: #e6f3ff;
+            --coral: #ff6b6b;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--light-blue);
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 92, 153, 0.7)),
+                        url('https://images.unsplash.com/photo-1534043464124-3be32fe000c9') center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+        }
+
+        .navbar {
+            background-color: var(--deep-blue);
+        }
+        
+        .navbar-brand, .nav-link {
+            color: white !important;
+        }
+        
+        .product-section {
+            padding: 100px 0;
+            background-color: white;
+            position: relative;
+        }
+
+        .product-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23e6f3ff" fill-opacity="0.2" d="M0,160L48,170.7C96,181,192,203,288,192C384,181,480,139,576,138.7C672,139,768,181,864,186.7C960,192,1056,160,1152,138.7C1248,117,1344,107,1392,101.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') center/cover;
+            opacity: 0.1;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(0,92,153,0.1);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-image {
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .product-details {
+            padding: 20px;
+        }
+
+        .product-features {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+
+        .product-features li {
+            padding: 5px 0;
+            color: #666;
+        }
+
+        .product-features li i {
+            color: var(--ocean-blue);
+            margin-right: 10px;
+        }
+
+        .contact-section {
+            background: linear-gradient(rgba(0, 51, 102, 0.95), rgba(0, 92, 153, 0.95)),
+                        url('https://images.unsplash.com/photo-1571438688413-ef7d373a476e') center/cover fixed;
+            padding: 80px 0;
+            color: white;
+            position: relative;
+        }
+
+        .bubble {
+            position: absolute;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            animation: float 8s infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--ocean-blue);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fas fa-fish me-2"></i>Triaton Aquatics</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/index2.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about.html">About </a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+                <div class="cart-icon dropdown">
+                    <i class="fas fa-shopping-cart text-white fs-5" data-bs-toggle="dropdown"></i>
+                    <span class="cart-count">0</span>
+                    <div class="dropdown-menu dropdown-menu-end cart-dropdown">
+                        <div class="cart-items">
+                            <p class="text-center mb-0">Your cart is empty</p>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span>Total:</span>
+                            <span class="cart-total">$0.00</span>
+                        </div>
+                        <button class="btn btn-primary w-100 mt-3">Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Create Your Perfect Aquatic World</h1>
+                    <p class="lead mb-4">Discover our premium selection of aquariums, fish, and supplies to build your dream underwater ecosystem.</p>
+                    <a href="#products" class="btn btn-primary btn-lg">Explore Products</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section id="products" class="product-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Products</h2>
+                <p>Premium aquariums for your aquatic companions</p>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1571438688413-ef7d373a476e" alt="Luxury Aquarium Set" class="product-image w-100">
+                        <div class="product-details">
+                            <h3>Premium Glass Aquarium Set</h3>
+                            <ul class="product-features">
+                                <li><i class="fas fa-check"></i>90-Gallon Crystal Clear Glass Tank</li>
+                                <li><i class="fas fa-check"></i>LED Lighting System</li>
+                                <li><i class="fas fa-check"></i>Advanced Filtration System</li>
+                                <li><i class="fas fa-check"></i>Temperature Control Unit</li>
+                            </ul>
+                            <div class="d-flex justify-content-between align-items-center mt-4">
+                                <span class="product-price">$899.99</span>
+                                <button class="btn btn-primary" onclick="addToCart({id: 1, name: 'Premium Glass Aquarium Set', price: 899.99, image: 'https://images.unsplash.com/photo-1571438688413-ef7d373a476e'})">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- More product cards will be added here -->
+            </div>
+            <div class="text-center mt-5">
+                <a href="products.html" class="btn btn-outline-primary btn-lg">View All Products <i class="fas fa-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="bubble" style="width: 50px; height: 50px; top: 20%; left: 10%;"></div>
+        <div class="bubble" style="width: 30px; height: 30px; top: 30%; right: 20%;"></div>
+        <div class="bubble" style="width: 40px; height: 40px; bottom: 20%; left: 30%;"></div>
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p class="text-light">Let our aquarium experts help you</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="contact-info">
+                        <h3><i class="fas fa-fish me-2"></i>Visit Our Store</h3>
+                        <p><i class="fas fa-map-marker-alt me-2"></i> 123 Ocean Drive, Marine City</p>
+                        <p><i class="fas fa-phone me-2"></i> (555) 123-4567</p>
+                        <p><i class="fas fa-envelope me-2"></i> info@triatonaquatics.com</p>
+                        <div class="social-links mt-4">
+                            <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="email" class="form-control" placeholder="Your Email" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Subject" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap and Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Cart functionality
+        let cartItems = [];
+        let cartCount = 0;
+        let cartTotal = 0;
+        
+        function updateCart() {
+            const cartItemsContainer = document.querySelector('.cart-items');
+            document.querySelector('.cart-count').textContent = cartCount;
+            document.querySelector('.cart-total').textContent = `$${cartTotal.toFixed(2)}`;
+            
+            if (cartItems.length === 0) {
+                cartItemsContainer.innerHTML = '<p class="text-center mb-0">Your cart is empty</p>';
+                return;
+            }
+            
+            cartItemsContainer.innerHTML = cartItems.map(item => `
+                <div class="cart-item">
+                    <img src="${item.image}" alt="${item.name}">
+                    <div>
+                        <h6 class="mb-0">${item.name}</h6>
+                        <p class="mb-0">$${item.price.toFixed(2)} x ${item.quantity}</p>
+                    </div>
+                    <button class="btn btn-sm btn-danger ms-auto" onclick="removeFromCart(${item.id})">×</button>
+                </div>
+            `).join('');
+        }
+        
+        function addToCart(product) {
+            const existingItem = cartItems.find(item => item.id === product.id);
+            
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cartItems.push({...product, quantity: 1});
+            }
+            
+            cartCount++;
+            cartTotal += product.price;
+            updateCart();
+        }
+        
+        function removeFromCart(productId) {
+            const itemIndex = cartItems.findIndex(item => item.id === productId);
+            if (itemIndex > -1) {
+                const item = cartItems[itemIndex];
+                cartCount -= item.quantity;
+                cartTotal -= item.price * item.quantity;
+                cartItems.splice(itemIndex, 1);
+                updateCart();
+            }
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Contact form
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

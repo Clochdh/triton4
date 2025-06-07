@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triaton Aquatics - About Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --deep-blue: #003366;
+            --ocean-blue: #005c99;
+            --light-blue: #e6f3ff;
+            --coral: #ff6b6b;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--light-blue);
+        }
+        
+        .navbar {
+            background-color: var(--deep-blue);
+        }
+        
+        .navbar-brand, .nav-link {
+            color: white !important;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 92, 153, 0.7)),
+                        url('https://images.unsplash.com/photo-1534043464124-3be32fe000c9') center/cover;
+            height: 50vh; /* Adjusted height for about page */
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+        }
+
+        .about-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--deep-blue), var(--ocean-blue));
+            position: relative;
+            color: white;
+        }
+
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23e6f3ff" fill-opacity="0.2" d="M0,160L48,170.7C96,181,192,203,288,192C384,181,480,139,576,138.7C672,139,768,181,864,186.7C960,192,1056,160,1152,138.7C1248,117,1344,107,1392,101.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') center/cover;
+            opacity: 0.1;
+        }
+
+        .about-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(5px);
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .about-card h3 {
+            color: var(--light-blue);
+            margin-bottom: 20px;
+        }
+
+        .contact-section {
+            background: linear-gradient(rgba(0, 51, 102, 0.95), rgba(0, 92, 153, 0.95)),
+                        url('https://images.unsplash.com/photo-1571438688413-ef7d373a476e') center/cover fixed;
+            padding: 80px 0;
+            color: white;
+            position: relative;
+        }
+
+        .bubble {
+            position: absolute;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            animation: float 8s infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); } 
+            50% { transform: translateY(-20px); } 
+            100% { transform: translateY(0); } 
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--ocean-blue);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-fish me-2"></i>Triaton Aquatics</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./index2.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+                <div class="cart-icon dropdown">
+                    <i class="fas fa-shopping-cart text-white fs-5" data-bs-toggle="dropdown"></i>
+                    <span class="cart-count">0</span>
+                    <div class="dropdown-menu dropdown-menu-end cart-dropdown">
+                        <div class="cart-items">
+                            <p class="text-center mb-0">Your cart is empty</p>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span>Total:</span>
+                            <span class="cart-total">$0.00</span>
+                        </div>
+                        <button class="btn btn-primary w-100 mt-3">Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section for About Page -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-4">About Triaton Aquatics</h1>
+                    <p class="lead mb-4">Your trusted partner in creating stunning aquatic environments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Story & Mission</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <div class="about-card">
+                        <h3>Our Story</h3>
+                        <p>Founded in 20XX, Triaton Aquatics began with a simple passion: to bring the beauty and tranquility of aquatic life into every home and office. What started as a small local shop has grown into a leading online retailer, serving enthusiasts across the globe. Our journey has been driven by a commitment to quality, innovation, and customer satisfaction.</p>
+                        <p>We believe that a well-maintained aquarium is more than just a tank of water; it's a living piece of art, a source of calm, and a window into another world. Our team comprises experienced aquarists and dedicated professionals who share this belief and work tirelessly to provide the best products and advice.</p>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="about-card">
+                        <h3>Our Mission</h3>
+                        <p>Our mission at Triaton Aquatics is to empower aquatic enthusiasts of all levels to create and maintain thriving underwater ecosystems. We strive to:</p>
+                        <ul>
+                            <li>Provide the highest quality aquariums, equipment, and supplies.</li>
+                            <li>Offer expert advice and resources to foster successful aquarists.</li>
+                            <li>Promote responsible and sustainable aquatic practices.</li>
+                            <li>Build a vibrant community where passion for aquatics can flourish.</li>
+                        </ul>
+                        <p>We are constantly researching and sourcing the latest advancements in aquarium technology and husbandry to ensure our customers have access to the best tools for their aquatic adventures.</p>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="about-card">
+                        <h3>Why Choose Us?</h3>
+                        <p>Choosing Triaton Aquatics means choosing a partner dedicated to your success. Here's what sets us apart:</p>
+                        <ul>
+                            <li><strong>Expertise:</strong> Our team has years of experience in the aquatic industry.</li>
+                            <li><strong>Quality Products:</strong> We hand-pick every item to ensure durability and performance.</li>
+                            <li><strong>Customer Support:</strong> We're here to help you every step of the way, from setup to maintenance.</li>
+                            <li><strong>Community Focus:</strong> Join our growing family of aquarists and share your passion.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <p class="text-center mb-5">Have questions or need assistance? Reach out to us!</p>
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <h4>Our Location</h4>
+                            <p><i class="fas fa-map-marker-alt me-2"></i>123 Ocean Drive, Coral City, AQ 98765</p>
+                            <h4>Email Us</h4>
+                            <p><i class="fas fa-envelope me-2"></i>info@triatonaquatics.com</p>
+                            <h4>Call Us</h4>
+                            <p><i class="fas fa-phone me-2"></i>+1 (555) 123-4567</p>
+                            <h4 class="mt-4">Follow Us</h4>
+                            <div class="social-links fs-4">
+                                <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
+                                <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <h4>Send Us a Message</h4>
+                            <form>
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" placeholder="Your Name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="email" class="form-control" placeholder="Your Email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Basic cart functionality (if needed, can be removed if not applicable to about page)
+        document.addEventListener('DOMContentLoaded', function() {
+            const cartIcon = document.querySelector('.cart-icon');
+            const cartCount = document.querySelector('.cart-count');
+            const cartItemsContainer = document.querySelector('.cart-items');
+            const cartTotalSpan = document.querySelector('.cart-total');
+            // No add-to-cart buttons on this page, so no need to select them
+            let cart = []; // Cart state would typically be managed globally or via local storage
+
+            function updateCartDisplay() {
+                cartItemsContainer.innerHTML = '';
+                let total = 0;
+                if (cart.length === 0) {
+                    cartItemsContainer.innerHTML = '<p class="text-center mb-0">Your cart is empty</p>';
+                } else {
+                    cart.forEach((item, index) => {
+                        const cartItemDiv = document.createElement('div');
+                        cartItemDiv.classList.add('d-flex', 'justify-content-between', 'align-items-center', 'mb-2');
+                        cartItemDiv.innerHTML = `
+                            <span>${item.name} x ${item.quantity}</span>
+                            <span>$${(item.price * item.quantity).toFixed(2)}
+                                <button class="btn btn-sm btn-danger ms-2 remove-from-cart" data-index="${index}">Remove</button>
+                            </span>
+                        `;
+                        cartItemsContainer.appendChild(cartItemDiv);
+                        total += item.price * item.quantity;
+                    });
+                }
+                cartTotalSpan.textContent = `$${total.toFixed(2)}`;
+                cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+            }
+
+            // Event listener for removing items from cart (if cart is populated from elsewhere)
+            cartItemsContainer.addEventListener('click', function(event) {
+                if (event.target.classList.contains('remove-from-cart')) {
+                    const index = parseInt(event.target.dataset.index);
+                    if (cart[index].quantity > 1) {
+                        cart[index].quantity--;
+                    } else {
+                        cart.splice(index, 1);
+                    }
+                    updateCartDisplay();
+                }
+            });
+
+            // In a real application, you'd load cart data from local storage here
+            // For this example, cart starts empty
+            updateCartDisplay(); 
+        });
+    </script>
+</body>
+</html>
